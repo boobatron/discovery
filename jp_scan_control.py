@@ -85,7 +85,7 @@ if(args.schedule_resume):
     # use tw_scan_control to enable each scan
     for scan in schedule:
         cmd = str.encode("tw_scan_control --password " + guipw + " --enable " + scan.split(" ", 1)[0])
-        if args.verbose: print("tw_scan_control --disable " + scan.split(" ", 1)[0])
+        if args.verbose: print("tw_scan_control --enable " + scan.split(" ", 1)[0])
         with Popen([cmd], shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE) as proc:
             out, err = proc.communicate()
             if err: print(err.decode('utf-8')); sys.exit("Aborting")
