@@ -90,4 +90,4 @@ if(args.schedule_resume):
             out, err = proc.communicate()
             if err: print(err.decode('utf-8')); sys.exit("Aborting")
             if args.verbose: print(out.decode('utf-8'))
-    # looks successful; delete the file
+    # looks successful; delete or archive the schedule file?
